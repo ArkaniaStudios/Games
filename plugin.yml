@@ -1,0 +1,6 @@
+name: Games
+version: 0.0.1
+api: 5.0.0
+main: arkania\Main
+src-namespace-prefix: arkania
+author: ArkaniaStudios
