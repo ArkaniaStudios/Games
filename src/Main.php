@@ -16,7 +16,7 @@ declare(strict_types=1);
 
 namespace arkania;
 
-use arkania\utils\Utils;
+use arkania\utils\Loader;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\SingletonTrait;
 
@@ -25,10 +25,11 @@ class Main extends PluginBase {
 
     protected function onLoad(): void {
         self::setInstance($this);
-        $this->getLogger()->info(Utils::getPrefix() . "§aLaunching...");
     }
 
     protected function onEnable(): void {
+
+        new Loader($this);
 
         $this->getLogger()->info(
             "\n     _      ____    _  __     _      _   _   ___      _".
