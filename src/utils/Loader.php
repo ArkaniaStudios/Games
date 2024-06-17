@@ -20,8 +20,7 @@ namespace arkania\utils;
 use arkania\customs\Register;
 use arkania\Main;
 
-final class Loader
-{
+final class Loader {
 
     private Main $Main;
 
