@@ -22,6 +22,20 @@ use pocketmine\player\Player;
 
 class FormManager {
 
+    public function sendNavigatorForm(Player $player): void {
+        $form = new SimpleForm(
+            $player,
+            "Navigator",
+            "This is a form for the navigator system.",
+            [
+                new SimpleButton("1", "1"),
+                new SimpleButton("2", "2"),
+                new SimpleButton("3", "3"),
+            ],
+        );
+        $player->sendForm($form);
+    }
+
     public function friendMenu(Player $player): void {
         $form = new SimpleForm(
             $player,
@@ -33,5 +47,6 @@ class FormManager {
                 new SimpleButton("remove", "remove"),
             ],
         );
+        $player->sendForm($form);
     }
 }

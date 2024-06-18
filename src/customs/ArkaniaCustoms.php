@@ -18,6 +18,7 @@ namespace arkania\customs;
 
 use arkania\customs\blocks\TestBlock;
 use arkania\customs\items\FriendItem;
+use arkania\customs\items\NavigatorItem;
 use arkania\customs\items\TestItem;
 use customiesdevs\customies\block\CustomiesBlockFactory;
 use customiesdevs\customies\item\CustomiesItemFactory;
@@ -28,6 +29,7 @@ use pocketmine\utils\CloningRegistryTrait;
 /**
  * @method static TestItem TEST_ITEM()
  * @method static FriendItem FRIEND_ITEM()
+ * @method static NavigatorItem NAVIGATOR_ITEM()
  *
  * @method static TestBlock TEST_BLOCK()
  */
@@ -46,6 +48,7 @@ final class ArkaniaCustoms {
 
         self::_registryRegister("test_item", self::getItem("test_item"));
         self::_registryRegister("friend_item", self::getItem("friend_item"));
+        self::_registryRegister("navigator_item", self::getItem("navigator_item"));
 
     }
 
