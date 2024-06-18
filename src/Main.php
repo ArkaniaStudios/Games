@@ -16,6 +16,7 @@ declare(strict_types=1);
 
 namespace arkania;
 
+use arkania\interface\FormManager;
 use arkania\utils\Loader;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\SingletonTrait;
@@ -23,11 +24,15 @@ use pocketmine\utils\SingletonTrait;
 class Main extends PluginBase {
     use SingletonTrait;
 
+    private FormManager $formManager;
+
     protected function onLoad(): void {
         self::setInstance($this);
     }
 
     protected function onEnable(): void {
+
+        $this->formManager = new FormManager();
 
         new Loader($this);
 
@@ -40,5 +45,9 @@ class Main extends PluginBase {
             "\n ".
             "\n* Games plugins launch !"
         );
+    }
+
+    public function formManager(): FormManager {
+        return $this->formManager;
     }
 }

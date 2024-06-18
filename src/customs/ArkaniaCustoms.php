@@ -17,6 +17,7 @@ declare(strict_types=1);
 namespace arkania\customs;
 
 use arkania\customs\blocks\TestBlock;
+use arkania\customs\items\FriendItem;
 use arkania\customs\items\TestItem;
 use customiesdevs\customies\block\CustomiesBlockFactory;
 use customiesdevs\customies\item\CustomiesItemFactory;
@@ -26,13 +27,15 @@ use pocketmine\utils\CloningRegistryTrait;
 
 /**
  * @method static TestItem TEST_ITEM()
+ * @method static FriendItem FRIEND_ITEM()
+ *
  * @method static TestBlock TEST_BLOCK()
  */
 
 final class ArkaniaCustoms {
     use CloningRegistryTrait;
 
-    private const PREFIX = "arkania:";
+    private const string PREFIX = "arkania:";
 
     protected static function setup(): void {
         self::setupItems();
@@ -42,6 +45,7 @@ final class ArkaniaCustoms {
     private static function setupItems(): void {
 
         self::_registryRegister("test_item", self::getItem("test_item"));
+        self::_registryRegister("friend_item", self::getItem("friend_item"));
 
     }
 

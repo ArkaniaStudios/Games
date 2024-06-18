@@ -18,6 +18,7 @@ namespace arkania\customs;
 
 use arkania\customs\blocks\BlockUtils;
 use arkania\customs\blocks\TestBlock;
+use arkania\customs\items\FriendItem;
 use arkania\customs\items\ItemUtils;
 use arkania\customs\items\TestItem;
 use customiesdevs\customies\block\Model;
@@ -34,6 +35,7 @@ final class Register {
         $i = ItemUtils::getInstance();
 
         $i->register(TestItem::class, "test_item", "item pour test");
+        $i->register(FriendItem::class, "friend_item", "Liste d'amis");
     }
 
     private static function block(): void {

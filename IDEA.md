@@ -1,3 +1,12 @@
+# Liste des fonctionnalités du lobby 🛠️
+
+# Items :
+## Idée 1 (Friend System)
+### Description
+> Faire en sorte de pouvoir ajouter / supprimer des amis via un item et pouvoir les inviter dans des parties.
+
+---
+
 # Liste d'idées de mini jeux 📜
 
 ## Idée 1 (HikaBrain)
