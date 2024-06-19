@@ -30,6 +30,7 @@ class FormManager {
             [
                 new SimpleButton("french", "French"),
                 new SimpleButton("english", "English"),
+                new SimpleButton("back", "<-"),
             ],
         );
         $player->sendForm($form);
@@ -44,6 +45,7 @@ class FormManager {
                 new SimpleButton("list", "List"),
                 new SimpleButton("add", "Add"),
                 new SimpleButton("remove", "remove"),
+                new SimpleButton("back", "<-"),
             ],
         );
         $player->sendForm($form);

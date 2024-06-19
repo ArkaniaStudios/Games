@@ -14,7 +14,6 @@ declare(strict_types=1);
  *
  */
 
-
 namespace arkania\utils;
 
 use arkania\customs\Register;
@@ -28,8 +27,8 @@ final class Loader {
     public function __construct(Main $main) {
         $this->main = $main;
         $this->initConfig();
-        $this->initListener();
         $this->initUnLoadCommand();
+        $this->initListener();
         $this->Customs();
     }
 
@@ -38,10 +37,6 @@ final class Loader {
 
         mkdir($this->main->getDataFolder() . "player");
         $this->main->saveResource("player/stats.json");
-    }
-
-    private function initListener(): void {
-        $this->main->getServer()->getPluginManager()->registerEvents(new PlayerJoin(), $this->main);
     }
 
     private function initUnLoadCommand(): void {
@@ -54,6 +49,10 @@ final class Loader {
 
         foreach ($unLoadCommand as $unCommand)
             $commandMap->unregister($commandMap->getCommand($unCommand));
+    }
+
+    private function initListener(): void {
+        $this->main->getServer()->getPluginManager()->registerEvents(new PlayerJoin(), $this->main);
     }
 
     private function Customs(): void {
