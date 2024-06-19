@@ -16,18 +16,11 @@ declare(strict_types=1);
 
 namespace arkania\interface;
 
-use arkania\Main;
 use nacre\form\class\SimpleForm;
 use nacre\form\elements\buttons\SimpleButton;
 use pocketmine\player\Player;
-use pocketmine\utils\Config;
 
 class FormManager {
-    public Config $cfg;
-
-    public function __construct() {
-        $this->cfg = new Config(Main::getInstance()->getDataFolder() . "player/data.json");
-    }
 
     public function languageSelectionMenu(Player $player): void {
         $form = new SimpleForm(
@@ -39,8 +32,6 @@ class FormManager {
                 new SimpleButton("english", "English"),
             ],
             function (Player $player, $data) {
-                if ($data[0]) {
-                }
             }
         );
         $player->sendForm($form);

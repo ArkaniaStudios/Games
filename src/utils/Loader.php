@@ -26,21 +26,9 @@ final class Loader {
 
     public function __construct(Main $main) {
         $this->main = $main;
-        $this->initConfig();
         $this->initUnLoadCommand();
         $this->initListener();
         $this->Customs();
-    }
-
-    private function initConfig(): void {
-        $playerFolder = $this->main->getDataFolder() . "player";
-
-        if (!is_dir($playerFolder)) {
-            mkdir($playerFolder);
-        }
-
-        $this->main->saveDefaultConfig();
-        $this->main->saveResource("player/data.json");
     }
 
     private function initUnLoadCommand(): void {
