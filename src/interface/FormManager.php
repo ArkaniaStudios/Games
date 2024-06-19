@@ -22,6 +22,19 @@ use pocketmine\player\Player;
 
 class FormManager {
 
+    public function languageSelectionMenu(Player $player): void {
+        $form = new SimpleForm(
+            $player,
+            "languages",
+            "Choice your language",
+            [
+                new SimpleButton("french", "French"),
+                new SimpleButton("english", "English"),
+            ],
+        );
+        $player->sendForm($form);
+    }
+
     public function friendMenu(Player $player): void {
         $form = new SimpleForm(
             $player,
@@ -33,5 +46,6 @@ class FormManager {
                 new SimpleButton("remove", "remove"),
             ],
         );
+        $player->sendForm($form);
     }
 }

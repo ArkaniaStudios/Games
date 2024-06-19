@@ -36,7 +36,7 @@ class FriendItem extends Item implements ItemComponents {
     }
 
     public function onClickAir(Player $player, Vector3 $directionVector, array &$returnedItems): ItemUseResult {
-        Main::getInstance()->formManager()->friendMenu();
+        Main::getInstance()->formManager()->friendMenu($player);
         return ItemUseResult::SUCCESS();
     }
 }

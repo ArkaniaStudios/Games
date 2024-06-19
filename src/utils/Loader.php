@@ -18,28 +18,39 @@ declare(strict_types=1);
 namespace arkania\utils;
 
 use arkania\customs\Register;
+use arkania\listener\PlayerJoin;
 use arkania\Main;
 
 final class Loader {
 
-    private Main $Main;
+    private Main $main;
 
-    public function __construct(Main $Main) {
-        $this->Main = $Main;
+    public function __construct(Main $main) {
+        $this->main = $main;
+        $this->initConfig();
+        $this->initListener();
         $this->initUnLoadCommand();
         $this->Customs();
     }
 
-    /**
-     * @return void
-     */
+    private function initConfig(): void {
+        $this->main->saveDefaultConfig();
+
+        mkdir($this->main->getDataFolder() . "player");
+        $this->main->saveResource("player/stats.json");
+    }
+
+    private function initListener(): void {
+        $this->main->getServer()->getPluginManager()->registerEvents(new PlayerJoin(), $this->main);
+    }
+
     private function initUnLoadCommand(): void {
         $unLoadCommand = [
             'me',
             'whitelist'
         ];
 
-        $commandMap = $this->Main->getServer()->getCommandMap();
+        $commandMap = $this->main->getServer()->getCommandMap();
 
         foreach ($unLoadCommand as $unCommand)
             $commandMap->unregister($commandMap->getCommand($unCommand));
@@ -47,6 +58,6 @@ final class Loader {
 
     private function Customs(): void {
         Register::registerAll();
-        $this->Main->getLogger()->info("§c*§r Items/Blocks Ready !");
+        $this->main->getLogger()->info("§c*§r Items/Blocks Ready !");
     }
 }
