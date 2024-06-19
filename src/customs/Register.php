@@ -20,6 +20,7 @@ use arkania\customs\blocks\BlockUtils;
 use arkania\customs\blocks\TestBlock;
 use arkania\customs\items\FriendItem;
 use arkania\customs\items\ItemUtils;
+use arkania\customs\items\NavigatorItem;
 use arkania\customs\items\TestItem;
 use customiesdevs\customies\block\Model;
 use customiesdevs\customies\item\CreativeInventoryInfo;
@@ -36,6 +37,7 @@ final class Register {
 
         $i->register(TestItem::class, "test_item", "item pour test");
         $i->register(FriendItem::class, "friend_item", "Liste d'amis");
+        $i->register(NavigatorItem::class, "navigator_item", "Navigateur");
     }
 
     private static function block(): void {
