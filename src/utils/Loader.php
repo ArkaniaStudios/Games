@@ -33,9 +33,13 @@ final class Loader {
     }
 
     private function initConfig(): void {
-        $this->main->saveDefaultConfig();
+        $playerFolder = $this->main->getDataFolder() . "player";
 
-        mkdir($this->main->getDataFolder() . "player");
+        if (!is_dir($playerFolder)) {
+            mkdir($playerFolder);
+        }
+
+        $this->main->saveDefaultConfig();
         $this->main->saveResource("player/data.json");
     }
 

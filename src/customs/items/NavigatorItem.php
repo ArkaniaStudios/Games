@@ -37,7 +37,7 @@ class NavigatorItem extends Item implements ItemComponents {
     }
 
     public function onClickAir(Player $player, Vector3 $directionVector, array &$returnedItems): ItemUseResult {
-        Main::getInstance()->FormManager()->sendNavigatorForm($player);
+        //Main::getInstance()->FormManager()->sendNavigatorForm($player);
         return ItemUseResult::SUCCESS();
     }
 }
