@@ -36,7 +36,7 @@ final class Loader {
         $this->main->saveDefaultConfig();
 
         mkdir($this->main->getDataFolder() . "player");
-        $this->main->saveResource("player/stats.json");
+        $this->main->saveResource("player/data.json");
     }
 
     private function initUnLoadCommand(): void {
