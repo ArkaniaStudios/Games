@@ -1,0 +1,8 @@
+#Config of Games | ArkaniaStudios
+
+database:
+  host: 'localhost'
+  username: 'root'
+  password: ''
+  schema: 'arkaniastudios'
+  port: 3306
