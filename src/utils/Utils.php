@@ -16,6 +16,7 @@ declare(strict_types=1);
 
 namespace arkania\utils;
 
+
 final class Utils {
 
     /**
