@@ -37,7 +37,7 @@ use pocketmine\utils\CloningRegistryTrait;
 final class ArkaniaCustoms {
     use CloningRegistryTrait;
 
-    private const string PREFIX = "arkania:";
+    private const PREFIX = "arkania:";
 
     protected static function setup(): void {
         self::setupItems();

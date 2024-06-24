@@ -1,13 +1,6 @@
 {
   "namespace": "pause",
 
-  "achievements_icon": {
-    "type": "image",
-    "texture": "textures/ui/achievements",
-    "layer": 3,
-    "size": [ 16, 16 ]
-  },
-
   "dressing_room_controller_button_content": {
     "type": "panel",
     "size": [ "100%c", "100%cm" ],
@@ -504,33 +497,6 @@
               "side_padding": {
                 "type": "panel",
                 "size": [ "12%", 0 ]
-              }
-            },
-            {
-              "achievements_btn@pause.column_frame": {
-                "ignored": "$achievements_ignored",
-                "size": [ 28, 32 ],
-                "controls": [
-                  { "achievements_icon_button@pause.achievements_icon_button": {} }
-                ],
-                "bindings": [
-                  {
-                    "binding_name": "#achievements_visible",
-                    "binding_name_override": "#visible"
-                  }
-                ]
-              }
-            },
-            {
-              "achievements_padding": {
-                "type": "panel",
-                "size": [ "2%", 0 ],
-                "bindings": [
-                  {
-                    "binding_name": "#achievements_visible",
-                    "binding_name_override": "#visible"
-                  }
-                ]
               }
             }
           ]
