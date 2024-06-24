@@ -45,8 +45,8 @@ class FormManager {
             [
                 new SimpleButton("list", "List"),
                 new SimpleButton("add", "Add"),
-                new SimpleButton("remove", "remove"),
-                new SimpleButton("back", "<-"),
+                new SimpleButton("remove", "Remove"),
+                new SimpleButton("blocked", "Blocked")
             ],
         );
         $player->sendForm($form);

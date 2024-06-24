@@ -18,6 +18,7 @@ namespace arkania\utils;
 
 use arkania\customs\Register;
 use arkania\listener\PlayerJoin;
+use arkania\listener\PlayerQuit;
 use arkania\Main;
 
 final class Loader {
@@ -44,11 +45,13 @@ final class Loader {
     }
 
     private function initListener(): void {
-        $this->main->getServer()->getPluginManager()->registerEvents(new PlayerJoin(), $this->main);
+        $this->main->getServer()->getPluginManager()->registerEvents(new PlayerJoin($this->main->getScheduler()), $this->main);
+        $this->main->getServer()->getPluginManager()->registerEvents(new PlayerQuit(), $this->main);
     }
 
     private function Customs(): void {
         Register::registerAll();
         $this->main->getLogger()->info("§c*§r Items/Blocks Ready !");
     }
+
 }

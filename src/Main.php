@@ -16,8 +16,11 @@ declare(strict_types=1);
 
 namespace arkania;
 
+use arkania\database\DataBaseManager;
 use arkania\interface\FormManager;
+use arkania\task\BossBar;
 use arkania\utils\Loader;
+use Exception;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\SingletonTrait;
 
@@ -25,13 +28,18 @@ class Main extends PluginBase {
     use SingletonTrait;
 
     private FormManager $formManager;
+    private DataBaseManager $dataBaseManager;
 
+    /**
+     * @throws Exception
+     */
     protected function onLoad(): void {
         self::setInstance($this);
+
+        $this->dataBaseManager = new DataBaseManager($this);
     }
 
     protected function onEnable(): void {
-
         $this->formManager = new FormManager();
 
         new Loader($this);
@@ -50,4 +58,9 @@ class Main extends PluginBase {
     public function formManager(): FormManager {
         return $this->formManager;
     }
+
+    public function databaseManager(): DataBaseManager {
+        return $this->dataBaseManager;
+    }
+
 }
