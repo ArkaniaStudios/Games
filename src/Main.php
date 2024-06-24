@@ -17,8 +17,8 @@ declare(strict_types=1);
 namespace arkania;
 
 use arkania\database\DataBaseManager;
-use arkania\interface\FormManager;
-use arkania\task\BossBar;
+use arkania\manager\FormManager;
+use arkania\manager\RessourcePackManager;
 use arkania\utils\Loader;
 use Exception;
 use pocketmine\plugin\PluginBase;
@@ -41,8 +41,10 @@ class Main extends PluginBase {
 
     protected function onEnable(): void {
         $this->formManager = new FormManager();
+        RessourcePackManager::enableResourcePack(true);
 
         new Loader($this);
+
 
         $this->getLogger()->info(
             "\n     _      ____    _  __     _      _   _   ___      _".

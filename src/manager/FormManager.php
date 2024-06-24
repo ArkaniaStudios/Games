@@ -14,7 +14,7 @@ declare(strict_types=1);
  *
  */
 
-namespace arkania\interface;
+namespace arkania\manager;
 
 use nacre\form\class\SimpleForm;
 use nacre\form\elements\buttons\SimpleButton;

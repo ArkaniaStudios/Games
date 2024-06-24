@@ -18,8 +18,10 @@ namespace arkania\utils;
 
 use arkania\customs\Register;
 use arkania\listener\PlayerJoin;
+use arkania\listener\PlayerInventory;
 use arkania\listener\PlayerQuit;
 use arkania\Main;
+use arkania\manager\RessourcePackManager;
 
 final class Loader {
 
@@ -30,6 +32,7 @@ final class Loader {
         $this->initUnLoadCommand();
         $this->initListener();
         $this->Customs();
+        $this->initManager();
     }
 
     private function initUnLoadCommand(): void {
@@ -45,13 +48,34 @@ final class Loader {
     }
 
     private function initListener(): void {
-        $this->main->getServer()->getPluginManager()->registerEvents(new PlayerJoin($this->main->getScheduler()), $this->main);
-        $this->main->getServer()->getPluginManager()->registerEvents(new PlayerQuit(), $this->main);
+        $events = [
+
+            new PlayerJoin($this->main->getScheduler()),
+            new PlayerQuit(),
+            new PlayerInventory()
+        ];
+
+        $eventManager = $this->main->getServer()->getPluginManager();
+
+        foreach ($events as $event)
+            $eventManager->registerEvents($event, $this->main);
+
+        /* Alerts */
+        $this->main->getLogger()->info("§c*§r Listener Ready !");
     }
 
     private function Customs(): void {
         Register::registerAll();
+
+        /* Alerts */
         $this->main->getLogger()->info("§c*§r Items/Blocks Ready !");
+    }
+
+    private function initManager(): void {
+        new RessourcePackManager($this->main);
+
+        /* Alerts */
+        $this->main->getLogger()->info("§c*§r Manager Ready !");
     }
 
 }
