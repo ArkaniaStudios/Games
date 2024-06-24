@@ -5,8 +5,11 @@
     "navigator_item": {
       "textures": "textures/items/navigator_item.png"
     },
-    "mythril_sickle": {
-      "textures": "textures/items/mythril_sickle.png"
+    "party_item": {
+      "textures": "textures/items/party_item.png"
+    },
+    "friend_item": {
+      "textures": "textures/items/friend_item.png"
     }
   }
 }

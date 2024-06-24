@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace arkania\listener;
 
-use arkania\Main;
 use pocketmine\event\inventory\InventoryTransactionEvent;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerDropItemEvent;
