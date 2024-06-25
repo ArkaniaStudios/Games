@@ -8,6 +8,9 @@
     "party_item": {
       "textures": "textures/items/party_item.png"
     },
+    "setting_item": {
+      "textures": "textures/items/setting_item.png"
+    },
     "friend_item": {
       "textures": "textures/items/friend_item.png"
     }
