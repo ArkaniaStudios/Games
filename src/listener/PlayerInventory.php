@@ -19,5 +19,4 @@ class PlayerInventory implements Listener {
             $event->cancel();
         }
     }
-
 }
