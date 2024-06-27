@@ -17,6 +17,7 @@ declare(strict_types=1);
 namespace arkania\customs;
 
 use arkania\customs\blocks\TestBlock;
+use arkania\customs\items\CosmeticItem;
 use arkania\customs\items\FriendItem;
 use arkania\customs\items\NavigatorItem;
 use arkania\customs\items\PartyItem;
@@ -34,6 +35,7 @@ use pocketmine\utils\CloningRegistryTrait;
  * @method static NavigatorItem NAVIGATOR_ITEM()
  * @method static PartyItem PARTY_ITEM()
  * @method static SettingItem SETTING_ITEM()
+ * @method static CosmeticItem COSMETIC_ITEM()
  *
  * @method static TestBlock TEST_BLOCK()
  */
@@ -55,7 +57,7 @@ final class ArkaniaCustoms {
         self::_registryRegister("navigator_item", self::getItem("navigator_item"));
         self::_registryRegister("party_item", self::getItem("party_item"));
         self::_registryRegister("setting_item", self::getItem("setting_item"));
-
+        self::_registryRegister("cosmetic_item", self::getItem("cosmetic_item"));
     }
 
     private static function setupBlocks(): void {

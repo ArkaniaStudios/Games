@@ -45,7 +45,6 @@ class Main extends PluginBase {
 
         new Loader($this);
 
-
         $this->getLogger()->info(
             "\n     _      ____    _  __     _      _   _   ___      _".
             "\n    / \    |  _ \  | |/ /    / \    | \ | | |_ _|    / \ ".
@@ -61,7 +60,7 @@ class Main extends PluginBase {
         return $this->formManager;
     }
 
-    public function databaseManager(): DataBaseManager {
+    public function getDataBaseManager() : DataBaseManager {
         return $this->dataBaseManager;
     }
 

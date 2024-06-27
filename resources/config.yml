@@ -6,3 +6,9 @@ database:
   password: ''
   schema: 'arkaniastudios'
   port: 3306
+
+scoreboard:
+  lines:
+    - "Welcome, {NAME}!"
+    - "Score: 0"
+    - "Health: 100%"

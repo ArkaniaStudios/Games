@@ -18,6 +18,7 @@ namespace arkania\customs;
 
 use arkania\customs\blocks\BlockUtils;
 use arkania\customs\blocks\TestBlock;
+use arkania\customs\items\CosmeticItem;
 use arkania\customs\items\FriendItem;
 use arkania\customs\items\ItemUtils;
 use arkania\customs\items\NavigatorItem;
@@ -42,6 +43,7 @@ final class Register {
         $i->register(NavigatorItem::class, "navigator_item", "Navigator");
         $i->register(PartyItem::class, "party_item", "Party");
         $i->register(SettingItem::class, "setting_item", "Settings");
+        $i->register(CosmeticItem::class, "cosmetic_item", "Cosmetics");
     }
 
     private static function block(): void {
