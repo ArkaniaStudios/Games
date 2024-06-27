@@ -7,12 +7,12 @@ namespace arkania\listener;
 use arkania\customs\ArkaniaCustoms;
 use arkania\Main;
 use arkania\task\BossBarTask;
-use arkania\utils\Utils;
-use nacre\bossbar\BossBar;
-use nacre\bossbar\BossBarColor;
+use arkania\task\ScoreBoardTask;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\scheduler\TaskScheduler;
+use nacre\bossbar\BossBar;
+use nacre\bossbar\BossBarColor;
 
 class PlayerJoin implements Listener {
 
@@ -53,6 +53,7 @@ class PlayerJoin implements Listener {
         ];
 
         $this->scheduler->scheduleRepeatingTask(new BossBarTask($player, $bossBars, 0.005), 1);
+        $this->scheduler->scheduleRepeatingTask(new ScoreBoardTask($player), 20 * 60);
     }
 
 }
