@@ -25,6 +25,9 @@ use pocketmine\item\ItemIdentifier;
 class TestItem extends Item implements ItemComponents {
     use ItemComponentsTrait;
 
+    const IDENTIFIER = "arkania:test_item";
+    const NAME = "item pour test";
+
     public function __construct(ItemIdentifier $identifier, string $name = "Unknown", array $enchantmentTags = []) {
         parent::__construct($identifier, $name, $enchantmentTags);
         $creative = new CreativeInventoryInfo(CreativeInventoryInfo::CATEGORY_ITEMS);

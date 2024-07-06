@@ -18,15 +18,9 @@ namespace arkania\customs;
 
 use arkania\customs\blocks\BlockUtils;
 use arkania\customs\blocks\TestBlock;
-use arkania\customs\items\CosmeticItem;
-use arkania\customs\items\FriendItem;
-use arkania\customs\items\ItemUtils;
-use arkania\customs\items\NavigatorItem;
-use arkania\customs\items\PartyItem;
-use arkania\customs\items\SettingItem;
-use arkania\customs\items\TestItem;
 use customiesdevs\customies\block\Model;
 use customiesdevs\customies\item\CreativeInventoryInfo;
+use customiesdevs\customies\item\CustomiesItemFactory;
 
 final class Register {
 
@@ -36,14 +30,7 @@ final class Register {
     }
 
     private static function item(): void {
-        $i = ItemUtils::getInstance();
-
-        $i->register(TestItem::class, "test_item", "item pour test");
-        $i->register(FriendItem::class, "friend_item", "Friends");
-        $i->register(NavigatorItem::class, "navigator_item", "Navigator");
-        $i->register(PartyItem::class, "party_item", "Party");
-        $i->register(SettingItem::class, "setting_item", "Settings");
-        $i->register(CosmeticItem::class, "cosmetic_item", "Cosmetics");
+        CustomiesItemFactory::getInstance()->registerAllItems('arkania\\customs\\items', __DIR__ . '/items', true);
     }
 
     private static function block(): void {

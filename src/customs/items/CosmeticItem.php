@@ -29,6 +29,9 @@ use pocketmine\player\Player;
 class CosmeticItem extends Item implements ItemComponents {
     use ItemComponentsTrait;
 
+    const IDENTIFIER = "arkania:cosmetic_item";
+    const NAME = "Cosmetics";
+
     public function __construct(ItemIdentifier $identifier, string $name = "Unknown", array $enchantmentTags = []) {
         parent::__construct($identifier, $name, $enchantmentTags);
         $creative = new CreativeInventoryInfo(CreativeInventoryInfo::CATEGORY_ITEMS);

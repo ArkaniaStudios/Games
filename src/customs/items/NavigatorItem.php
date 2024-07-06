@@ -29,6 +29,8 @@ use pocketmine\player\Player;
 class NavigatorItem extends Item implements ItemComponents {
     use ItemComponentsTrait;
 
+    const IDENTIFIER = "arkania:navigator_item";
+    const NAME = "Navigator";
 
     public function __construct(ItemIdentifier $identifier, string $name = "Unknown", array $enchantmentTags = []) {
         parent::__construct($identifier, $name, $enchantmentTags);

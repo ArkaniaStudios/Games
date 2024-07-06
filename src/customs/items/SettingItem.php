@@ -28,6 +28,9 @@ use pocketmine\player\Player;
 class SettingItem extends Item implements ItemComponents {
     use ItemComponentsTrait;
 
+    const IDENTIFIER = "arkania:setting_item";
+    const NAME = "Settings";
+
     public function __construct(ItemIdentifier $identifier, string $name = "Unknown", array $enchantmentTags = []) {
         parent::__construct($identifier, $name, $enchantmentTags);
         $creative = new CreativeInventoryInfo(CreativeInventoryInfo::CATEGORY_ITEMS);

@@ -28,6 +28,9 @@ use pocketmine\player\Player;
 class PartyItem extends Item implements ItemComponents {
     use ItemComponentsTrait;
 
+    const IDENTIFIER = "arkania:party_item";
+    const NAME = "Party";
+
     public function __construct(ItemIdentifier $identifier, string $name = "Unknown", array $enchantmentTags = []) {
         parent::__construct($identifier, $name, $enchantmentTags);
         $creative = new CreativeInventoryInfo(CreativeInventoryInfo::CATEGORY_ITEMS);
