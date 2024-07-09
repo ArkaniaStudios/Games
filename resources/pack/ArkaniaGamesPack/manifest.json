@@ -4,7 +4,7 @@
         "description": "§fArkaniaStudios-Games Resource Pack (§emade by TEZULS§f)",
         "name": "§cArkaniaStudios-Games",
         "uuid": "8ebb0f4a-0649-4098-aedf-48bad45cfaa5",
-        "version": [0, 0, 39],
+        "version": [0, 0, 40],
         "min_engine_version": [ 1, 19, 0 ]
     },
     "modules": [
@@ -12,7 +12,7 @@
             "description": "§fArkaniaStudios-Games Resource Pack (§emade by TEZULS§f)",
             "type": "resources",
             "uuid": "2621c9a1-4fd2-4497-89f8-62ae45aa17a4",
-            "version": [0, 0, 39]
+            "version": [0, 0, 40]
         }
     ]
 }

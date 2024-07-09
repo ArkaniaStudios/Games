@@ -3,20 +3,20 @@
     "anim_push_start": {
         "anim_type": "offset",
         "easing": "out_cubic",
-        "duration": 1.0,
+        "duration": 0.7,
         "from": [
-            900,
-            -248
+            0,
+            0
         ],
         "to": [
-            226,
-            -248
+            -200,
+            0
         ],
         "next": "@hud.anim_wait"
     },
     "anim_wait": {
         "anim_type": "wait",
-        "duration": 1.9,
+        "duration": 1.6,
         "next": "@hud.anim_push_exit"
     },
     "anim_push_exit": {
@@ -24,16 +24,22 @@
         "easing": "in_cubic",
         "duration": 0.7,
         "from": [
-            226,
-            -248
+            -200,
+            0
         ],
         "to": [
-            900,
-            -248
+            0,
+            0
         ]
     },
     "hud_actionbar_text": {
         "type": "panel",
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "offset": [
+            200,
+            0
+        ],
         "controls": [
             {
                 "popUp_hud_actionbar_text": {
