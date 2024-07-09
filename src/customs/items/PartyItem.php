@@ -24,6 +24,8 @@ use pocketmine\item\ItemIdentifier;
 use pocketmine\item\ItemUseResult;
 use pocketmine\math\Vector3;
 use pocketmine\player\Player;
+use pocketmine\world\sound\NoteSound;
+use pocketmine\world\sound\XpLevelUpSound;
 
 class PartyItem extends Item implements ItemComponents {
     use ItemComponentsTrait;
@@ -38,7 +40,8 @@ class PartyItem extends Item implements ItemComponents {
     }
 
     public function onClickAir(Player $player, Vector3 $directionVector, array &$returnedItems): ItemUseResult {
-        $player->sendPopup("...");
+        $player->sendActionBarMessage(" Une erreur est survenue...");
+        $player->broadcastSound(new XpLevelUpSound(5));
         return ItemUseResult::SUCCESS();
     }
 }

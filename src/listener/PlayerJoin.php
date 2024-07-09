@@ -34,7 +34,8 @@ class PlayerJoin implements Listener {
 
         if (!$player->hasPlayedBefore()) {
 
-            $player->sendToastNotification("", "§rWelcome §e" . $player->getName() . "§r to the §cGames§f server (by §eArkaniaStudios§r), don't forget to read the rules before starting (§e/rules§r) !");
+            $player->sendToastNotification("", "§rWelcome §e" . $player->getName() . "§r to the §cGames§f server (by §eArkaniaStudios§r), don't forget to read the rules before starting (§e/rules§r) !");
+
             Main::getInstance()->formManager()->languageSelectionMenu($player);
         }else{
             $player->sendTitle("§fWelcome !", "§cEnjoy the game !");

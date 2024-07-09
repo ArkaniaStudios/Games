@@ -15,13 +15,12 @@ class ScoreBoardTask extends Task {
 
     public function onRun(): void {
         $scoreBoard = new ScoreBoard([
-            " ",
-            "  ",
-            "   ", // blank at here
-            "§cUser: §r" . $this->player->getName(),
+            " §cUser: §r" . $this->player->getName(),
+            " §cRank: ",
+            " §cLevel(s): §e0",
             "",
-            "§7" . date("d/m/y"),
-            "§6arkaniastudios.com"
+            " §7" . date("d/m/y"),
+            " §6arkaniastudios.com"
         ], $this->player);
         $scoreBoard->sendScoreBoard();
     }
